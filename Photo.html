@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Définit le jeu de caractères utilisé par le document -->
+    <meta charset="UTF-8" />
+    <!-- Rend le document responsive pour s'adapter aux différentes tailles d'écran -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <title>Photo Collection</title>
+    <!-- Inclusion du fichier CSS de Bulma pour le style général de la page -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+    />
+    <!-- Inclusion du fichier CSS de Fancybox pour les effets de lightbox sur les images -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+    />
+    <!-- Inclusion du fichier CSS personnalisé pour les styles spécifiques à cette page -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section class="section">
+        <div class="container">
+          <!-- Titre principal de la page -->
+          <h1 class="title">Photo Collection</h1>
+          <!-- Champ de recherche pour filtrer les photos par description -->
+          <div class="field">
+            <input
+              class="input"
+              type="text"
+              placeholder="Rechercher des photos par description"
+              id="searchInput"
+              aria-label="Rechercher des photos"
+            />
+          </div>
+          <!-- Grille de photos qui contiendra les photos téléchargées -->
+          <div class="columns is-multiline" id="photoGrid">
+            <div
+              class="column is-full-mobile is-one-third-tablet is-one-quarter-desktop"
+              id="addPhoto"
+            >
+              <div class="card photo-card">
+                <div class="card-content">
+                  <!-- Champ pour sélectionner des fichiers photo -->
+                  <div class="field">
+                    <div class="file has-name">
+                      <label class="file-label">
+                        <input
+                          class="file-input is-fullwidth"
+                          type="file"
+                          id="fileInput"
+                          multiple
+                        />
+                        <span class="file-cta">
+                          <span class="file-label"
+                            >Sélectionner des photos</span
+                          >
+                        </span>
+                        <span class="file-name" id="fileName"
+                          >Aucune photo sélectionnée</span
+                        >
+                      </label>
+                    </div>
+                  </div>
+                  <!-- Champ pour ajouter une description à la photo -->
+                  <div class="field">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Ajouter une description pour la photo"
+                      id="photoDescription"
+                    />
+                  </div>
+                  <!-- Bouton pour ajouter la photo à la collection -->
+                  <div class="field">
+                    <button
+                      class="button is-primary is-fullwidth"
+                      id="uploadBtn"
+                    >
+                      Ajouter la photo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Les photos téléchargées seront affichées ici -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Inclusion de la bibliothèque jQuery pour faciliter les manipulations DOM -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Inclusion de la bibliothèque Fancybox pour les effets de lightbox sur les images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <!-- Inclusion du fichier JavaScript personnalisé pour les fonctionnalités spécifiques à cette page -->
+    <script src="app.js"></script>
+  </body>
+</html>

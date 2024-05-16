@@ -1,0 +1,108 @@
+/* Applique des styles de base au corps de la page */
+body {
+  font-family: Arial, sans-serif; /* Utilise la police Arial, avec une alternative sans-serif */
+  background-color: #f0f0f0; /* Définit la couleur de fond de la page */
+  margin: 0; /* Supprime les marges par défaut du corps */
+  padding: 20px; /* Ajoute un padding de 20px autour du contenu */
+}
+
+/* Style pour le conteneur principal */
+.container {
+  max-width: 800px; /* Limite la largeur maximale à 800px */
+  margin: auto; /* Centre le conteneur horizontalement */
+  background: #fff; /* Définit le fond du conteneur en blanc */
+  padding: 20px; /* Ajoute un padding de 20px à l'intérieur du conteneur */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile autour du conteneur */
+}
+
+/* Style pour le titre principal */
+h1 {
+  text-align: center; /* Centre le texte du titre */
+  margin-bottom: 20px; /* Ajoute une marge inférieure de 20px */
+}
+
+/* Style pour la grille de photos */
+#photoGrid {
+  display: flex; /* Utilise le modèle flexbox pour la disposition */
+  flex-wrap: wrap; /* Permet le retour à la ligne des éléments */
+}
+
+/* Style pour les cartes de photo */
+.photo-card {
+  position: relative; /* Positionnement relatif pour la superposition des détails */
+  transition: transform 0.3s ease; /* Ajoute une transition douce pour l'effet de zoom */
+  display: flex; /* Utilise le modèle flexbox pour la disposition interne */
+  flex-direction: column; /* Dispose les éléments en colonne */
+  height: 100%; /* Prend toute la hauteur disponible */
+}
+
+/* Effet de zoom sur la carte de photo au survol */
+.photo-card:hover {
+  transform: scale(1.05); /* Agrandit légèrement la carte */
+}
+
+/* Style pour les images des cartes de photo */
+.photo-card img {
+  max-width: 100%; /* Limite la largeur maximale à 100% du conteneur */
+  height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+}
+
+/* Style pour les détails de la photo */
+.photo-details {
+  display: none; /* Cache les détails par défaut */
+}
+
+/* Affiche les détails de la photo au survol */
+.photo-card:hover .photo-details {
+  display: flex; /* Utilise le modèle flexbox pour la disposition */
+  align-items: center; /* Centre les éléments verticalement */
+  justify-content: center; /* Centre les éléments horizontalement */
+  position: absolute; /* Positionne les détails par rapport à la carte */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Ajoute un fond semi-transparent */
+  z-index: 1; /* Assure que les détails sont au-dessus de l'image */
+}
+
+/* Style pour les boutons des détails de la photo */
+.photo-card:hover .photo-details button {
+  display: block; /* Affiche les boutons */
+  color: white; /* Définit la couleur du texte en blanc */
+}
+
+/* Style pour les descriptions éditables */
+.editable-description {
+  cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+  color: #3273dc; /* Définit la couleur du texte */
+}
+
+/* Ajoute un soulignement au survol pour les descriptions éditables */
+.editable-description:hover {
+  text-decoration: underline; /* Ajoute un soulignement au texte */
+}
+
+/* Assure que toutes les cartes ont la même hauteur */
+.card-content {
+  display: flex; /* Utilise le modèle flexbox pour la disposition */
+  flex-direction: column; /* Dispose les éléments en colonne */
+  flex-grow: 1; /* Permet à l'élément de grandir pour occuper l'espace disponible */
+}
+
+/* Style pour le contenu média */
+.media-content {
+  flex-grow: 1; /* Permet à l'élément de grandir pour occuper l'espace disponible */
+}
+
+/* Assure que toutes les colonnes ont la même hauteur dans une disposition multi-lignes */
+.columns.is-multiline {
+  display: flex; /* Utilise le modèle flexbox pour la disposition */
+  flex-wrap: wrap; /* Permet le retour à la ligne des éléments */
+}
+
+/* Style pour chaque colonne individuelle */
+.columns.is-multiline .column {
+  display: flex; /* Utilise le modèle flexbox pour la disposition interne */
+  flex-direction: column; /* Dispose les éléments en colonne */
+}
